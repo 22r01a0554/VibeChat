@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { useCreateChatClient, Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
 import 'stream-chat-react/dist/css/v2/index.css';    
 const apiKey = 'aubh9kt3dvbc';
-const userId = 'shiny-wildflower-8';
-const userName = 'shiny';
-const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoic2hpbnktd2lsZGZsb3dlci04IiwiZXhwIjoxNzM2NzcyNTU4fQ.ZZ12lKScGBmM-p3ZJtdmMrIvmINmARivmCj7nrpnZq0';
+const userId = 'user_2rTqxp7yR2aawcRCZ8LJUTIx2qT';
+const userName = 'Lavanya';
+const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidXNlcl8yclRxeHA3eVIyYWF3Y1JDWjhMSlVUSXgycVQifQ._YwEJ0FstJb0Nfpu88zim4SUYApsB0miHLu809EihYU';
 const user= {
     id: userId,
     name: userName,
