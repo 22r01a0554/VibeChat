@@ -11,7 +11,7 @@ const user= {
     name: userName,
     image: `https://getstream.io/random_png/?name=${userName}`,
 };
-export default function ChatForum(slug) {
+export default function ChatForum({slug}) {
     function toTitleCase(str) {
         return str.replace(
             /\b[a-z]/g,
@@ -28,7 +28,7 @@ export default function ChatForum(slug) {
         if (!client) return;
         const channel = client.channel('messaging',slug, {
           image: 'https://getstream.io/random_png/?name=react',
-          name: toTitleCase(slug.replace(/-/g, " "))+'Discussion',
+          name: toTitleCase(slug.replace(/-/g, " "))+' Discussion',
           members: [userId],
         });
         setChannel(channel);
