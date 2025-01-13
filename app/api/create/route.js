@@ -31,7 +31,7 @@ export async function POST(request) {
         },
     })
     //Give access to this user
-    const slugs=["python-new2", "javascript-new2", "react-new2", "nodejs-new2", "datascience-new2", "machinelearning-new2"]
+    const slugs=["python", "javascript", "react", "nodejs", "datascience", "machinelearning"]
     slugs.forEach(async (item)=>{
         const channel = serverClient.channel('messaging', item, {
             image: 'https://getstream.io/random_png/?name=react',

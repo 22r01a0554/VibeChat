@@ -3,6 +3,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useCreateChatClient, Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
 import 'stream-chat-react/dist/css/v2/index.css';
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 const ChatForum = ({ clerkUser, slug }) => {
     const apiKey = 'aubh9kt3dvbc';
     const userId = clerkUser.id;
@@ -13,12 +16,6 @@ const ChatForum = ({ clerkUser, slug }) => {
         name: userName,
         image: `https://getstream.io/random_png/?name=${userName}`,
     };
-    function toTitleCase(str) {
-        return str.replace(
-            /\b[a-z]/g,
-            (char)=>char.toUpperCase()
-        );
-    }
     const [channel, setChannel] = useState();
     const client = useCreateChatClient({
         apiKey,
@@ -31,7 +28,7 @@ const ChatForum = ({ clerkUser, slug }) => {
 
         const channel = client.channel('messaging', slug, {
             image: 'https://getstream.io/random_png/?name=react',
-            name: toTitleCase(slug.replace(/-/g, " "))+' Discussion',
+            name: capitalize(slug)+' Discussion',
             members: [userId],
         });
 
