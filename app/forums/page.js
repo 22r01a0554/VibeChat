@@ -7,37 +7,37 @@ const topics = [
     text: "Python",
     img: "/python.png",
     desc: "Lets discuss everything related to Python",
-    slug: "python-discuss"
-  },
+    slug: "python"
+    },
   {
     text: "JavaScript",
     img: "/javascript.png",
     desc: "Dive deep into the world of JavaScript",
-    slug: "javascript-discuss"
+    slug: "javascript"
   },
   {
     text: "React",
     img: "/react.png",
     desc: "Build amazing user interfaces with React",
-    slug: "react-discuss"
+    slug: "react"
   },
   {
     text: "Node.js",
     img: "/nodejs.png",
     desc: "Learn and Explore server-side development with Node.js",
-    slug: "nodejs-discuss"
+    slug: "nodejs"
   },
   {
     text: "Data Science",
     img: "/datascience.png",
     desc: "Discover the power of data science with Python and other tools" ,
-    slug: "datascience-discuss"
+    slug: "datascience"
   },
   {
     text: "Machine Learning",
     img: "/machinelearning.png",
     desc: "Learn about machine learning algorithms and build intelligent systems",
-    slug: "machinelearning-discuss"    
+    slug: "machinelearning"    
   }
 ];
 const page = () => {
