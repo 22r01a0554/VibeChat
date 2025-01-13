@@ -5,32 +5,38 @@ const topics = [
   {
     text: "Python",
     img: "/python.png",
-    desc: "Lets discuss everything related to Python"
+    desc: "Lets discuss everything related to Python",
+    slug: "python-discuss"
   },
   {
     text: "JavaScript",
     img: "/javascript.png",
-    desc: "Dive deep into the world of JavaScript"
+    desc: "Dive deep into the world of JavaScript",
+    slug: "javascript-discuss"
   },
   {
     text: "React",
     img: "/react.png",
-    desc: "Build amazing user interfaces with React"
+    desc: "Build amazing user interfaces with React",
+    slug: "react-discuss"
   },
   {
     text: "Node.js",
     img: "/nodejs.png",
-    desc: "Learn and Explore server-side development with Node.js"
+    desc: "Learn and Explore server-side development with Node.js",
+    slug: "nodejs-discuss"
   },
   {
     text: "Data Science",
     img: "/datascience.png",
-    desc: "Discover the power of data science with Python and other tools" 
+    desc: "Discover the power of data science with Python and other tools" ,
+    slug: "datascience-discuss"
   },
   {
     text: "Machine Learning",
     img: "/machinelearning.png",
-    desc: "Learn about machine learning algorithms and build intelligent systems"
+    desc: "Learn about machine learning algorithms and build intelligent systems",
+    slug: "machinelearning-discuss"    
   }
 ];
 const page = () => {
@@ -53,10 +59,12 @@ const page = () => {
               />
               <h2 className="text-2xl font-semibold mb-2">{topic.text}</h2>
               <p className="text-gray-700 text-base">{topic.desc}</p>
-              <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 
-              rounded mt-4">
-                Discuss Now
-              </Button>
+              <Link href={`/forum/${topic.slug}`}>
+                <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 
+                rounded mt-4">
+                  Discuss Now
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
