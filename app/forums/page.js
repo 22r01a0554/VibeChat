@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import { Button } from "@/components/ui/button"
 const topics = [
   {
     text: "Python",
@@ -52,10 +53,10 @@ const page = () => {
               />
               <h2 className="text-2xl font-semibold mb-2">{topic.text}</h2>
               <p className="text-gray-700 text-base">{topic.desc}</p>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 
+              <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 
               rounded mt-4">
                 Discuss Now
-              </button>
+              </Button>
             </div>
           </div>
         ))}
