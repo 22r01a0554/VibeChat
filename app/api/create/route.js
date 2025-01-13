@@ -12,14 +12,12 @@ const api_secret = "ep5smgj88bt8jn22fsxvc94r5jd2szzmq4en5t9mukxpfq45yauh4vqkyzd3
 //     return Response.json({ message: 'Hello World' })
 //   }
 //Dynamic with ngrok for any number of users by giving userid when user registers
+
 export async function POST(request) {
     const serverClient = StreamChat.getInstance(api_key, api_secret);
     const user = await request.json()
-    function toTitleCase(str) {
-        return str.replace(
-            /\b[a-z]/g,
-            (char)=>char.toUpperCase()
-        );
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
     //Create User Token
     const token = serverClient.createToken(user.data.id);
@@ -33,15 +31,15 @@ export async function POST(request) {
         },
     })
     //Give access to this user
-    const slugs=["python-new", "javascript-new", "react-new", "nodejs-new", "datascience-new", "machinelearning-new"]
+    const slugs=["python-new2", "javascript-new2", "react-new2", "nodejs-new2", "datascience-new2", "machinelearning-new2"]
     slugs.forEach(async (item)=>{
         const channel = serverClient.channel('messaging', item, {
             image: 'https://getstream.io/random_png/?name=react',
-            name: toTitleCase(item.replace(/-/g, " "))+' Discussion',
+            name: capitalize(item)+' Discussion',
             created_by_id:user.data.id
         }); 
         await channel.create()
-        channel.addMembers([user.data.id])
+        await channel.addMembers([user.data.id])
     })
     return Response.json({ message: 'Hello World' })
 }
