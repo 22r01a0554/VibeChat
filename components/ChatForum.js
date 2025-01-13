@@ -12,6 +12,12 @@ const user= {
     image: `https://getstream.io/random_png/?name=${userName}`,
 };
 export default function ChatForum(slug) {
+    function toTitleCase(str) {
+        return str.replace(
+            /\b[a-z]/g,
+            (char)=>char.toUpperCase()
+        );
+    }
     const [channel, setChannel] = useState();
     const client = useCreateChatClient({
     apiKey,
@@ -22,7 +28,7 @@ export default function ChatForum(slug) {
         if (!client) return;
         const channel = client.channel('messaging',slug, {
           image: 'https://getstream.io/random_png/?name=react',
-          name: 'Talk about React',
+          name: toTitleCase(slug.replace(/-/g, " "))+'Discussion',
           members: [userId],
         });
         setChannel(channel);
