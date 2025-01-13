@@ -17,6 +17,6 @@ export async function POST(request) {
     //Create User Token
     const token = serverClient.createToken(user.data.id);
     console.log("A New User HAS BEEN CREATED.");
-    console.log("A New User is Registered with ID: "+user.id);
+    console.log("A New User is Registered with ID: "+user.data.id);
     return Response.json({ message: 'Hello World' })
   }
