@@ -1,7 +1,7 @@
 import { StreamChat } from "stream-chat";
 import { clerkClient } from '@clerk/nextjs/server'
-const api_key = "aubh9kt3dvbc";
-const api_secret = "ep5smgj88bt8jn22fsxvc94r5jd2szzmq4en5t9mukxpfq45yauh4vqkyzd3nbte";
+const api_key = "";
+const api_secret = "";
 //static without ngrok for only one user by giving userid before only
 // const user_id = "user_2rTqxp7yR2aawcRCZ8LJUTIx2qT";
 // export async function GET() {
